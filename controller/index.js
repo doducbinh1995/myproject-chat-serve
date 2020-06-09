@@ -13,7 +13,7 @@ module.exports = async function socketIoControl(socket, io) {
     })
     socket.on('send-message', (data) => {
         console.log("recived message")
-        socket.emit(PRIVATEPERSONALCHANEL, { id: data.id })
+        socket.emit(SENDINGMESSAGESUCESS, { id: data.id })
         socket.broadcast.emit(GETNEWSMESSAGE, { sender: userName, message: data.message, id: data.id })
     })
 }
